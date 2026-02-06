@@ -82,7 +82,7 @@ export default function Home() {
               className="text-2xl text-pink-500 mt-4"
               style={{ fontFamily: "var(--font-dancing)" }}
             >
-              Fijne Valentijnsdag! 💕
+              Fijne Valentijnsdag alvast! 💕
             </p>
           </div>
         ) : answered === "no" ? (
@@ -113,7 +113,11 @@ export default function Home() {
             )}
             <h1
               className={`text-3xl md:text-4xl font-bold text-pink-700 mb-6 ${isLastMessage ? "sparkle-text" : "text-shadow-cute"}`}
-              style={{ fontFamily: isLastMessage ? "var(--font-quicksand)" : "var(--font-dancing)" }}
+              style={{
+                fontFamily: isLastMessage
+                  ? "var(--font-quicksand)"
+                  : "var(--font-dancing)",
+              }}
             >
               {messages[currentMessage]}
             </h1>
