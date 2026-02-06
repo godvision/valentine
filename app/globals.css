@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fce4ec;
+  --foreground: #880e4f;
+  --font-dancing: "Dancing Script", cursive;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-dancing: var(--font-dancing);
+}
+
+body {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+  color: var(--foreground);
+  font-family: var(--font-dancing);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Heart animation keyframes */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.heart {
+  position: fixed;
+  color: #e91e63;
+  font-size: 20px;
+  pointer-events: none;
+  z-index: 0;
+  text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+}
+
+.heart-up {
+  animation: floatUp linear infinite;
+}
+
+.heart-down {
+  animation: floatDown linear infinite;
+}
+
+.button-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.text-shadow-cute {
+  text-shadow: 2px 2px 4px rgba(136, 14, 79, 0.3);
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(15px) rotate(180deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-10px) rotate(360deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(20px) rotate(540deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  z-index: 100;
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+/* Big heart bounce */
+@keyframes heartBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+}
+
+.heart-bounce {
+  animation: heartBounce 1s ease-in-out infinite;
+}
+
+/* Sparkle/glow effect */
+@keyframes sparkle {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 35px #ff69b4;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 70px #ff69b4;
+  }
+}
+
+.sparkle-text {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Celebration shake */
+@keyframes celebrate {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg) scale(1.05); }
+  75% { transform: rotate(5deg) scale(1.05); }
+}
+
+.celebrate {
+  animation: celebrate 0.5s ease-in-out infinite;
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Rainbow border */
+@keyframes rainbow {
+  0% { border-color: #ff6b6b; }
+  25% { border-color: #ff69b4; }
+  50% { border-color: #ff1493; }
+  75% { border-color: #ff69b4; }
+  100% { border-color: #ff6b6b; }
+}
+
+.rainbow-border {
+  animation: rainbow 2s linear infinite;
+  border-width: 4px;
+}
