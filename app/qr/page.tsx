@@ -25,20 +25,6 @@ export default function QRPage() {
           includeMargin={true}
         />
       </div>
-
-      <p
-        className="text-pink-600 mt-6 text-lg text-center"
-        style={{ fontFamily: "var(--font-quicksand)" }}
-      >
-        {SITE_URL}
-      </p>
-
-      <p
-        className="text-pink-400 mt-4 text-sm text-center"
-        style={{ fontFamily: "var(--font-quicksand)" }}
-      >
-        Tip: Verander SITE_URL in app/qr/page.tsx wanneer je de site host!
-      </p>
     </div>
   );
 }
